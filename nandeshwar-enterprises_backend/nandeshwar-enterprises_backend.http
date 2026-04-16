@@ -1,0 +1,6 @@
+@nandeshwar_enterprises_backend_HostAddress = http://localhost:5028
+
+GET {{nandeshwar_enterprises_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

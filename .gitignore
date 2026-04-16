@@ -1,0 +1,23 @@
+# FRONTEND
+nandeshwar-enterprises_frontend/node_modules/
+nandeshwar-enterprises_frontend/build/
+
+# BACKEND
+nandeshwar-enterprises_backend/bin/
+nandeshwar-enterprises_backend/obj/
+nandeshwar-enterprises_backend/.vs/
+
+# ENV
+.env
+.env.*
+
+# BACKEND SECRETS
+nandeshwar-enterprises_backend/appsettings.Development.json
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
