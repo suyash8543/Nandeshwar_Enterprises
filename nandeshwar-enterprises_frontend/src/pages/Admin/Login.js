@@ -31,9 +31,10 @@ export default function Login() {
 
         setLoading(true);
         try {
-            const res = await API.post("/auth/send-otp", {
+            await API.post("/auth/send-otp", {
                 email: email.trim()
             });
+
 
             setSuccess("OTP sent to your email");
             setShowOtp(true);
@@ -60,15 +61,14 @@ export default function Login() {
 
         setLoading(true);
         try {
-            const res = await API.post("/auth/verify-otp", {
+            const response = await API.post("/auth/verify-otp", {
                 email: email.trim(),
                 otp: otp.trim()
             });
 
             // ✅ SAVE LOGIN TOKEN AND FLAGS
-            if (res.data.token) {
-                sessionStorage.setItem("token", res.data.token);
-                
+            if (response.data.token) {
+                sessionStorage.setItem("token", response.data.token);
             }
             sessionStorage.setItem("isAdmin", "true");
             sessionStorage.setItem("adminEmail", email.trim());
