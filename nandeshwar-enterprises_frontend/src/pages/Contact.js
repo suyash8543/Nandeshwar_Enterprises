@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { sendContact } from "../services/contactService";
 
 export default function Contact() {
@@ -113,7 +113,7 @@ export default function Contact() {
 
             {/* CONTACT INFO - SINGLE LINE */}
             <div className="mt-12 flex flex-wrap justify-center gap-10 text-center">
-                
+
 
                 {/* PHONE */}
                 <a
@@ -130,7 +130,7 @@ export default function Contact() {
                     className="flex items-center gap-2 hover:text-green-400 transition"
                 >
                     <FaEnvelope className="text-green-400" />
-                    <span>info@nandeshwar.com</span>
+                    <span>nandeshwarenterprises1@gmail.com</span>
                 </a>
 
                 {/* WHATSAPP */}
@@ -142,6 +142,16 @@ export default function Contact() {
                 >
                     <FaWhatsapp className="text-green-400" />
                     <span>WhatsApp</span>
+                </a>
+                {/* INSTAGRAM */}
+                <a
+                    href="https://instagram.com/nandeshwar_enterprises_"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 hover:text-green-400 transition"
+                >
+                    <FaInstagram className="text-green-400" />
+                    <span>Instagram</span>
                 </a>
 
                 {/* LOCATION */}

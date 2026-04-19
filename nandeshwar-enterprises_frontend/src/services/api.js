@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "http://localhost:5028/api",
+    baseURL: `${process.env.REACT_APP_API_URL}/api`,
     headers: {
         "Content-Type": "application/json" // ✅ IMPORTANT
     }
@@ -9,7 +9,7 @@ const API = axios.create({
 
 
 
-// 🔐 Attach JWT token automatically (for admin)
+
 API.interceptors.request.use((config) => {
     const token = sessionStorage.getItem("token");
     if (token) {

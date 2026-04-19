@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { FaBolt, FaWhatsapp, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { FaBolt, FaWhatsapp, FaMapMarkerAlt, FaPhoneAlt, FaInstagram } from "react-icons/fa";
 import { getProjects } from "../services/projectService";
+
 
 
 
@@ -203,7 +204,7 @@ export default function Home() {
                     <div className="text-center">
                         <div className="mb-6">
                             <svg className="w-24 h-24 mx-auto text-green-400 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M14,2H6A2,2 0 0,0 4,4V20a2,2 0 0,0 2,2h12a2,2 0 0,0 2,-2V8l-8,-6m0,2h6v4H6V4h8m-2,11H8V7h8v8h-4z"/>
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20a2,2 0 0,0 2,2h12a2,2 0 0,0 2,-2V8l-8,-6m0,2h6v4H6V4h8m-2,11H8V7h8v8h-4z" />
                             </svg>
                             <h3 className="text-2xl font-semibold text-white mb-2">Solar Products Catalogue</h3>
                             <p className="text-gray-400 mb-6">Download our comprehensive catalogue featuring all solar panels, lighting solutions, and energy systems</p>
@@ -217,7 +218,7 @@ export default function Home() {
                                 className="bg-green-500 hover:bg-green-600 text-black px-8 py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2"
                             >
                                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
                                 </svg>
                                 Read Now
                             </a>
@@ -228,7 +229,7 @@ export default function Home() {
                                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition flex items-center justify-center gap-2"
                             >
                                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
                                 </svg>
                                 Download PDF
                             </a>
@@ -238,6 +239,8 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+
+
 
             {/* ================= LOCATION ================= */}
             <div className="mt-24">
@@ -274,6 +277,18 @@ export default function Home() {
                             <p>+91 6394925730</p>
                         </div>
 
+                        <div className="flex items-center gap-4">
+                            <FaInstagram className="text-green-400" />
+                            <a
+                                href="https://instagram.com/nandeshwar_enterprises_"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="hover:text-green-400 transition"
+                            >
+                                @nandeshwar_enterprises_
+                            </a>
+                        </div>
+
                         {/* BUTTONS */}
                         <div className="flex gap-4 mt-6 relative">
 
@@ -286,6 +301,7 @@ export default function Home() {
                             >
                                 Get Direction
                             </a>
+
 
                             {/* WHATSAPP BUTTON */}
                             <button
