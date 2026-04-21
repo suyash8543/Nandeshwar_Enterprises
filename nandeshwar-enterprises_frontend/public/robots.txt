@@ -3,4 +3,4 @@ Disallow: /admin
 Disallow: /admin/login
 Disallow: /admin/projects
 
-Sitemap: https://https://www.nandeshwarenterprises.co.in//sitemap.xml
+Sitemap: https://nandeshwarenterprises.co.in/sitemap.xml
