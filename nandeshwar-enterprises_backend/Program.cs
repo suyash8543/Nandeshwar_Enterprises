@@ -11,12 +11,16 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Services
 builder.Services.AddScoped<EmailService>();
 
-// ✅ FIXED HERE
+// Controllers
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
     });
+
+// ✅ ADD SWAGGER
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 // CORS
 builder.Services.AddCors(options =>
@@ -29,8 +33,17 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
+// CORS
 app.UseCors("AllowAll");
 
+
+app.MapGet("/", () => "Backend is running 🚀");
+
+// Controllers
 app.MapControllers();
 
 app.Run();
