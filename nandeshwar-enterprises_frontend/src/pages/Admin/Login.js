@@ -42,7 +42,7 @@ export default function Login() {
 
         } catch (err) {
             console.error("Error sending OTP:", err);
-            setError(err.response?.data || "Server error. Please try again.");
+            setError(err.response?.data?.message || "Server error. Please try again.");
         } finally {
             setLoading(false);
         }
@@ -80,7 +80,7 @@ export default function Login() {
 
         } catch (err) {
             console.error("Error verifying OTP:", err);
-            setError(err.response?.data || "Invalid OTP. Please try again.");
+            setError(err.response?.data?.message || "Invalid OTP. Please try again.");
         } finally {
             setLoading(false);
         }
