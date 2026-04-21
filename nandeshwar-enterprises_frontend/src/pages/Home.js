@@ -32,6 +32,8 @@ export default function Home() {
     };
 
     return (
+        
+        
         <div className="bg-black text-white min-h-screen px-6 md:px-10 py-20">
 
             {/* ================= HERO SECTION ================= */}
