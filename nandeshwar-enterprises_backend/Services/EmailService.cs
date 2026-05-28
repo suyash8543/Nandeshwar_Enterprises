@@ -1,29 +1,44 @@
-﻿using System.Net;
-using System.Net.Mail;
+﻿using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace nandeshwar_enterprises_backend.Services
 {
     public class EmailService
     {
-        public void SendOtp(string toEmail, string otp)
+        private readonly IConfiguration _config;
+
+        public EmailService(IConfiguration config)
         {
-            // ✅ WRITE HERE
-            var fromEmail = "stripathi8543@gmail.com";
-            var password = "jiyucqwzqltpmxil"; // App password (no spaces)
+            _config = config;
+        }
 
-            var smtp = new SmtpClient("smtp.gmail.com", 587)
-            {
-                Credentials = new NetworkCredential(fromEmail, password),
-                EnableSsl = true
-            };
+        public async Task SendOtp(string toEmail, string otp)
+        {
+            var apiKey = _config["EmailSettings:SendGridApiKey"];
+            var fromEmail = _config["EmailSettings:Email"];
 
-            var message = new MailMessage(fromEmail, toEmail)
+            var client = new SendGridClient(apiKey);
+
+            var msg = new SendGridMessage()
             {
+                From = new EmailAddress(fromEmail, "Nandeshwar Enterprises"),
                 Subject = "Your OTP Code",
-                Body = $"Your OTP is: {otp}"
+                HtmlContent = $@"
+                    <h2>Your OTP Code</h2>
+                    <p>Your OTP is: <strong>{otp}</strong></p>
+                    <p>Valid for 10 minutes.</p>
+                "
             };
 
-            smtp.Send(message);
+            msg.AddTo(new EmailAddress(toEmail));
+
+            var response = await client.SendEmailAsync(msg);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                var body = await response.Body.ReadAsStringAsync();
+                throw new Exception($"SendGrid error: {body}");
+            }
         }
     }
 }

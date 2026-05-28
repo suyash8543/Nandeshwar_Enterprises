@@ -21,7 +21,7 @@ namespace nandeshwar_enterprises_backend.Controllers
 
         // ✅ SEND OTP
         [HttpPost("send-otp")]
-        public IActionResult SendOtp([FromBody] EmailDto dto)
+        public async Task<IActionResult> SendOtp([FromBody] EmailDto dto)
         {
             var admin = _context.Admins.FirstOrDefault(a => a.Email == dto.Email);
 
@@ -35,7 +35,7 @@ namespace nandeshwar_enterprises_backend.Controllers
 
             _context.SaveChanges();
 
-            _emailService.SendOtp(dto.Email, otp);
+            await _emailService.SendOtp(dto.Email, otp);
 
             return Ok("OTP sent");
         }
