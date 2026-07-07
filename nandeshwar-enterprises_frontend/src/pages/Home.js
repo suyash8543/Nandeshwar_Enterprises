@@ -86,7 +86,7 @@ export default function Home() {
             {/* ================= STATS ================= */}
             <div className="flex flex-wrap justify-center md:justify-start gap-10 mt-16 text-center">
                 <div>
-                    <h2 className="text-3xl font-bold text-green-400">200+</h2>
+                    <h2 className="text-3xl font-bold text-green-400">400+</h2>
                     <p className="text-gray-400">Projects Completed</p>
                 </div>
 
